@@ -1,0 +1,82 @@
+html {
+  overflow-y: scroll;
+}
+body {
+  padding: 10px;
+  margin: 0;
+}
+.todo-list {
+  padding: 20px;
+  max-width: 945px;
+  margin: 0 auto 0 auto;
+  border: solid black 2px;
+  border-radius: 10px;
+}
+.header {
+  padding: 10px 0 10px 0;
+  margin: 0 22px 20px 22px;
+  display: flex;
+  justify-content: space-around;
+}
+a {
+  background: rgba(0, 0, 255, 0.2);
+  width: 140px;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration-line: none;
+  height: 39px;
+  line-height: 39px;
+}
+#taskName {
+  height: 33px;
+}
+.task-list {
+  display: flex;
+  flex-direction: column;
+}
+.task {
+  padding: 10px;
+  margin: 22px;
+  cursor: move;
+  border: solid blue 1px;
+  border-radius: 10px;
+  background: none;
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
+  font-size: 25px;
+}
+.task.over {
+  background: red;
+}
+.task.drag {
+  background: cyan;
+}
+.task.completed {
+  text-decoration-line: line-through;
+}
+input[type="checkbox"] {
+  margin: auto 0 auto 0;
+  appearance: none;
+  border: solid black 2px;
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+}
+input[type="checkbox"]:checked {
+  appearance: none;
+  border: solid red 2px;
+  border-radius: 15px;
+  padding: 5px;
+  background-clip: content-box;
+  background-color: blue;
+}
+img {
+  margin: auto 0 auto 0;
+  height: 30px;
+}
+img:hover {
+  transform: scale(1.1);
+  cursor: default;
+}

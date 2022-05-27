@@ -1,0 +1,35 @@
+@color-red: red;
+@color-black: black;
+@color-blue: blue;
+@color-cyan: cyan;
+@bg-color-red: rgba(255, 0, 0, 0.2);
+@bg-color-blue: rgba(0, 0, 255, 0.2);
+@bg-color-cyan: rgba(0, 255, 255, 0.2);
+
+@margin-h-center: 0 auto 0 auto;
+@margin-v-center: auto 0 auto 0;
+
+@br-rounded: 10px;
+@br-round: 15px;
+
+.flex-just(@justify) {
+  display: flex;
+  justify-content: @justify;
+}
+.flex-dir(@direction) {
+  display: flex;
+  flex-direction: @direction;
+}
+
+.bg-color(@color) when (@color = 'red') {
+  background: @bg-color-red;
+}
+.bg-color(@color) when (@color = 'blue')  {
+  background: @bg-color-blue;
+}
+.bg-color(@color) when (@color = 'cyan')  {
+  background: @bg-color-cyan;
+}
+.bg-color(@color) when (default())  {
+  background: @color-black;
+}

@@ -1,4 +1,5 @@
 let images;
+let checkboxes;
 
 function addTask()  {
     let task = document.createElement('div');
@@ -26,7 +27,20 @@ function addTask()  {
 
     task.appendChild(img);
     document.getElementsByClassName('task-list')[0].appendChild(task);
+    /*change task status------------------------------------------------------*/
+    checkboxes = document.querySelectorAll('input[type=checkbox]');
 
+    function setCompleted() {
+        if (this.checked)
+            this.parentNode.classList.add('completed');
+        else
+            this.parentNode.classList.remove('completed');
+    }
+
+    for (let iter = 0; iter < checkboxes.length; iter++)    {
+        checkboxes[iter].addEventListener('change', setCompleted);
+    }
+    /*delete task-------------------------------------------------------------*/
     images = document.querySelectorAll('.images');
 
     function removeEl()  {

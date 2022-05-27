@@ -1,0 +1,81 @@
+html {
+  overflow-y: scroll;
+}
+body {
+  padding: 10px;
+  margin: 0;
+}
+.todo-list {
+  padding: 20px;
+  max-width: 945px;
+  margin: @margin-h-center;
+  border: solid @color-black 2px;
+  border-radius: @br-rounded;
+}
+.header {
+  padding: 10px 0 10px 0;
+  margin: 0 22px 20px 22px;
+  .flex-just(space-around);
+}
+a {
+  background: @bg-color-blue;
+  width: 140px;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration-line: none;
+  height: 39px;
+  line-height: 39px;
+}
+#taskName {
+  height: 33px;
+}
+.task-list {
+  .flex-dir(column);
+}
+.task {
+  padding: 10px;
+  margin: 22px;
+  cursor: move;
+  border: solid @color-blue 1px;
+  border-radius: @br-rounded;
+  background: none;
+  .flex-just(space-between);
+  line-height: 40px;
+  font-size: 25px;
+}
+.task.over {
+  background: @color-red;
+}
+.task.drag {
+  background: @color-cyan;
+}
+.task.completed {
+  text-decoration-line: line-through;
+}
+input[type="checkbox"] {
+  margin: @margin-v-center;
+  appearance: none;
+  border: solid @color-black 2px;
+  height: 30px;
+  width: 30px;
+  border-radius: @br-rounded;
+}
+input[type="checkbox"]:checked {
+  appearance: none;
+  border: solid @color-red 2px;
+  border-radius: @br-round;
+  padding: 5px;
+  background-clip: content-box;
+  background-color: @color-blue;
+}
+img {
+  margin: @margin-v-center;
+  height: 30px;
+}
+img:hover {
+  transform: scale(1.1);
+  cursor: default;
+}
+
+@import "vars";
