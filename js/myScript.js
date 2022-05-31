@@ -5,6 +5,16 @@ let dragEl = null;
 let items;
 
 //let completed = false;
+function genTasks()  {
+    let x = confirm('Сгенерировать 6 задач?');
+
+    if (x)  {
+        for (let iter = 0; iter < 6; iter++){
+            document.getElementById('taskName').value = iter + 1;
+            addTask();
+        }
+    }
+}
 
 function dragStart(e)    {
     this.classList.add('drag');
@@ -53,10 +63,18 @@ function dragDrop(e)    {
         this.innerHTML = e.dataTransfer.getData('text/html');
         //console.log(this.innerHTML);
         //console.log(dragEl.innerHTML);
-        if (firstIsChecked)
+        if (firstIsChecked) {
             this.querySelector('input[type=checkbox]').checked = true;
-        if (secondIsChecked)
+            this.classList.add('completed');
+        }
+        else
+            this.classList.remove('completed');
+        if (secondIsChecked) {
             dragEl.querySelector('input[type=checkbox]').checked = true;
+            dragEl.classList.add('completed');
+        }
+        else
+            dragEl.classList.remove('completed');
 
         /*if (this.querySelector('input[type=checkbox]').checked)
         if (completed)  {

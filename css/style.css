@@ -28,6 +28,10 @@ a {
   height: 39px;
   line-height: 39px;
 }
+#btn-2 {
+  position: absolute;
+  right: 300px;
+}
 #taskName {
   height: 33px;
 }
