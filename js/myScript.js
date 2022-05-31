@@ -76,6 +76,19 @@ function dragDrop(e)    {
         else
             dragEl.classList.remove('completed');
 
+        checkboxSelector();
+
+        function setCompleted() {
+            if (this.checked)
+                this.parentNode.classList.add('completed');
+            else
+                this.parentNode.classList.remove('completed');
+        }
+
+        for (let iter = 0; iter < checkboxes.length; iter++)    {
+            checkboxes[iter].addEventListener('change', setCompleted);
+        }
+
         /*if (this.querySelector('input[type=checkbox]').checked)
         if (completed)  {
             this.querySelector('input[type=checkbox]').checked = true;
@@ -95,6 +108,10 @@ function dragEnd() {
     });
 
     //console.log('dragEnd');
+}
+
+function checkboxSelector() {
+    checkboxes = document.querySelectorAll('input[type=checkbox]');
 }
 
 function addTask()  {
@@ -124,7 +141,7 @@ function addTask()  {
     task.appendChild(img);
     document.getElementsByClassName('task-list')[0].appendChild(task);
     /*change task status------------------------------------------------------*/
-    checkboxes = document.querySelectorAll('input[type=checkbox]');
+    checkboxSelector();
 
     function setCompleted() {
         if (this.checked)
